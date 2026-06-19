@@ -1,0 +1,9 @@
+{
+  "name": "我的網站",
+  "short_name": "MySite",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "description": "一個簡單的網站範例"
+}
