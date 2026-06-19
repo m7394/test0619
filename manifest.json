@@ -1,7 +1,8 @@
 {
   "name": "我的網站",
   "short_name": "MySite",
-  "start_url": "/",
+  "start_url": "/test0619/",
+  "scope": "/test0619/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
