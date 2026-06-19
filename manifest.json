@@ -1,10 +1,22 @@
 {
   "name": "我的網站",
   "short_name": "MySite",
-  "start_url": "/test0619/",
-  "scope": "/test0619/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
-  "description": "一個簡單的網站範例"
+  "description": "一個簡單的網站範例",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

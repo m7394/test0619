@@ -28,6 +28,36 @@
 
     RWD 測試：電腦紅色 / 手機藍色
 
+        <button id="installBtn" style="display:none;position:fixed;right:12px;bottom:12px;padding:10px 14px;font-size:16px;">安裝 PWA</button>
+
+        <script>
+            // Register service worker
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js').catch(function(err){
+                    console.log('SW 註冊失敗:', err);
+                });
+            }
+
+            // Handle beforeinstallprompt to show an install button
+            let deferredPrompt;
+            const installBtn = document.getElementById('installBtn');
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                installBtn.style.display = 'block';
+            });
+
+            installBtn.addEventListener('click', async () => {
+                installBtn.style.display = 'none';
+                if (!deferredPrompt) return;
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+                console.log('install outcome:', outcome);
+            });
+        </script>
+
 </body>
 
 </html>
